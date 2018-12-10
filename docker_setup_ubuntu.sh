@@ -18,7 +18,6 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo gpasswd -a $USER docker
 newgrp docker
-# start new
-docker run hello-world
 
-#sudo docker run --cap-drop ALL -it -v $PWD:/data trailofbits/algo:latest
+# run algoVPN image
+docker run --cap-drop ALL -it -v $PWD:/data trailofbits/algo:latest
