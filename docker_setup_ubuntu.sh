@@ -1,5 +1,4 @@
 # Setup docker and launch AlgoVPN image with the config file included in this repo
-tmux
 
 # Setup docker for Ubuntu
 sudo apt-get update
@@ -16,12 +15,10 @@ sudo add-apt-repository \
 sudo apt-get update   
 sudo apt-get install docker-ce -y
 sudo groupadd docker
-sudo usermod -aG docker $USER
-
-logout
-
+#sudo usermod -aG docker $USER
+sudo gpasswd -a $USER docker
+newgrp docker
 # start new
-tmux
 docker run hello-world
 
 #sudo docker run --cap-drop ALL -it -v $PWD:/data trailofbits/algo:latest
